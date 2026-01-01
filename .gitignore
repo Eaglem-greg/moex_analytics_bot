@@ -1,18 +1,44 @@
-.env
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
+# Virtual Environment
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
 .env
-*.env
-secrets.txt
+.env.local
+.env.*
 
-*.log
-
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Project specific
+data/
+cache/
+*.db
+secrets.txt
