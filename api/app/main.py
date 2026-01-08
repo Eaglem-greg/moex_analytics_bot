@@ -3,10 +3,13 @@ from services.data_mapper import get_sectors, get_sector_ticker, get_asset_type
 
 def create_app():
     app = Flask(__name__)
+    app.json.ensure_ascii = False
 
     @app.route('/sectors')
     def sectors():
-        return jsonify(get_sectors())
+        res = jsonify(get_sectors())
+        res.headers["Content-Type"] = "application/json; charset=utf-8"
+        return res
     
     @app.route('/sectors/<sector>/tickers')
     def tickers(sector: str):
